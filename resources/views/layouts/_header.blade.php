@@ -3,7 +3,7 @@
 
    <a href="{{ url('/') }}" class="navbar-brand">LaraBBS</a>
 
-   <button type="button" class="navbar-toggler" data-toggle="#collaspe" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
      <span class="navbar-toggler-icon"></span>
    </button>
 
@@ -16,8 +16,8 @@
      <!-- Right Side Of Navbar -->
      <ul class="navbar-nav navbar-right">
        <!-- Authentication Links -->
-       <li class="nav-item"><a class="nav-link" href="#">登录</a></li>
-       <li class="nav-item"><a class="nav-link" href="#">注册</a></li>
+       <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">登录</a></li>
+       <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">注册</a></li>
      </ul>
    </div>
  </div>
