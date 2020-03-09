@@ -11,8 +11,11 @@
 |
 */
 
-Route::get('/','pagesController@root')->name('root');
+Route::get('/', 'pagesController@root')->name('root');
 
 Auth::routes();
 Auth::routes(['verify' => true]);
+
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+
 
