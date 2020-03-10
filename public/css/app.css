@@ -16824,6 +16824,9 @@ readers do not read off random characters that represent icons */
 body {
   font-family: Helvetica, "Microsoft YaHei", Arial, sans-serif;
   font-size: 14px;
+  padding-bottom: 70px;
+  min-height: 100vh;
+  position: relative;
 }
 
 /* header */
