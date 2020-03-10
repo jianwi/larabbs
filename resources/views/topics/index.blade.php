@@ -27,7 +27,7 @@
       </div>
     </div>
 
-    <div class="col-lg-3 col-md-3 sidebar ">
+    <div class="col-lg-3 col-md-3 sidebar d-none d-lg-block">
       @include('topics._sidebar')
     </div>
 

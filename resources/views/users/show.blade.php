@@ -2,7 +2,7 @@
 @section('title',$user->name.'的个人空间')
 @section('content')
   <div class="row">
-    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs user-info">
+    <div class="col-lg-3 col-md-3 d-none d-md-block user-info">
         <div class="card">
             <img class="card-img-top p-1" src="{{ $user->avatar ?: "https://cdn.learnku.com/uploads/images/201709/20/1/PtDKbASVcz.png?imageView2/1/w/600/h/600" }}" alt="{{ $user->name }}">
           <div class="card-body">
