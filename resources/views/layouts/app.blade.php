@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   {{--  csrf tooken--}}
   <meta name="csrf-token" content="{{ csrf_token() }}">
-
+  <meta name="description" content="@yield('description', 'LaraBBS 爱好者社区')" />
   <title>@yield('title','LaraBBS')--Larabbs</title>
 
   {{--  Style--}}
