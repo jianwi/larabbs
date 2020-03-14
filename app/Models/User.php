@@ -69,6 +69,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
     {
         return $this->hasMany(Reply::class);
     }
+
     public function isAuthorOf($model)
     {
         return $this->id == $model->user_id;
@@ -80,4 +81,26 @@ class User extends Authenticatable implements MustVerifyEmailContract
         $this->save();
         $this->unreadNotifications->markAsRead();
     }
+
+    public function setPasswordAttribute($value)
+    {
+        // 如果值的长度等于 60，即认为是已经做过加密的情况
+        if (strlen($value) != 60) {
+            $this->attributes['password'] = bcrypt($value);
+        }
+        $this->attributes['password'] = $value;
+    }
+
+    public function setAvatarAttribute($path)
+    {
+        // 如果不是 `http` 子串开头，那就是从后台上传的，需要补全 URL
+        if ( ! \Str::startsWith($path, 'http')) {
+
+            // 拼接完整的 URL
+            $path = config('app.url') . "/uploads/images/avatars/$path";
+        }
+
+        $this->attributes['avatar'] = $path;
+    }
+
 }
