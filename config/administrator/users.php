@@ -1,7 +1,5 @@
 <?php
 
-use App\User;
-
 return [
 //页面标题
     'title' => '用户',
