@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'pagesController@root')->name('root');
+Route::get('/', 'TopicsController@index')->name('root');
 
 Auth::routes();
 Auth::routes(['verify' => true]);
