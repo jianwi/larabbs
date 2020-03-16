@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Laravel\Horizon\Horizon;
+use function foo\func;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -26,10 +28,15 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-        
+
         Gate::guessPolicyNamesUsing(function ($modelClass) {
             // 动态返回模型对应的策略名称，如：// 'App\Model\User' => 'App\Policies\UserPolicy',
             return 'App\Policies\\'.class_basename($modelClass).'Policy';
+        });
+
+        Horizon::auth(function ($request){
+//           是否站长
+            return \Auth::user()->hasRole('Fonder');
         });
         //
     }
